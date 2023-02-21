@@ -141,9 +141,9 @@ public class BoardPage {
 		
 		webutil.click(target);
 		
-		System.out.println(webutil.fetchXCo0rdinate(webutil.getElement(getElement_card(),cardName)));
+		System.out.println("X Coordinate: "+webutil.fetchXCo0rdinate(webutil.getElement(getElement_card(),cardName)));
 		
-		System.out.println(webutil.fetchYCo0rdinate(webutil.getElement(getElement_card(),cardName)));
+		System.out.println("Y Coordinate: "+webutil.fetchYCo0rdinate(webutil.getElement(getElement_card(),cardName)));
 	}
 
 }

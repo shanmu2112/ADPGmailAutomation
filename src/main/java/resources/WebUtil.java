@@ -123,11 +123,13 @@ public class WebUtil {
 
 		}
 		
-		public int fetchXCo0rdinate(WebElement element) {
+		public int fetchXCo0rdinate(WebElement element) 
+		{
 			return element.getLocation().getX();
 		}
 		
-		public int fetchYCo0rdinate(WebElement element) {
+		public int fetchYCo0rdinate(WebElement element) 
+		{
 			return element.getLocation().getY();
 		}
 

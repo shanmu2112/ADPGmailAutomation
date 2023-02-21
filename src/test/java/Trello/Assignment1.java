@@ -54,7 +54,7 @@ public class Assignment1 extends BasePage{
 	    basePage.boardPage(driver).createCardinList("work2", "Remote");
 	    
 	    basePage.boardPage(driver).dragCardFromOneListToAnother("work1", "Remote");
-	    
+	  
 	}
 
 }
