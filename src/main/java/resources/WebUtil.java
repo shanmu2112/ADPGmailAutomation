@@ -122,6 +122,14 @@ public class WebUtil {
 			Thread.sleep(2000);
 
 		}
+		
+		public int fetchXCo0rdinate(WebElement element) {
+			return element.getLocation().getX();
+		}
+		
+		public int fetchYCo0rdinate(WebElement element) {
+			return element.getLocation().getY();
+		}
 
 	}
 	
