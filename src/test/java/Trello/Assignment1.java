@@ -36,7 +36,7 @@ public class Assignment1 extends BasePage{
 	}
 	
 	@Test
-	public void dragCardAndfetchCardCoordinates() throws InterruptedException
+	public void dragCardAndfetchCardCoordinates() throws InterruptedException, IOException
 	{
 	 
 	    basePage.homePage(driver).createWorkspace("Anywhere Works", "Help the world work anywhere ");	
@@ -54,6 +54,8 @@ public class Assignment1 extends BasePage{
 	    basePage.boardPage(driver).createCardinList("work2", "Remote");
 	    
 	    basePage.boardPage(driver).dragCardFromOneListToAnother("work1", "Remote");
+	    
+	    basePage.loginPage(driver).logout();
 	  
 	}
 

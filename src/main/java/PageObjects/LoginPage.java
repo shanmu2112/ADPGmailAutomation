@@ -28,6 +28,12 @@ public class LoginPage {
 		
 		By btn_login = By.xpath("//button[contains(@id,'login')]");
 		
+		By icon_account = By.xpath("//button[@aria-label='Open member menu']");
+		
+		By btn_logout = By.xpath("//button[contains(@data-testid,'logout')]");
+		
+	    By btn_finalLogout = By.xpath("//span[text()='Log out']/parent::span/parent::button");
+		
 		public LoginPage(WebDriver driver) throws IOException
 	{
 		
@@ -67,6 +73,21 @@ public class LoginPage {
 			return driver.findElement(btn_login);
 		}
 		
+		public By getIcon_account() {
+			
+			return icon_account;
+		}
+		
+		public By getBtn_logout() {
+			
+			return btn_logout;
+		}
+		
+		public By getBtn_finalLogout() {
+			
+			return btn_finalLogout;
+		}
+		
 		public void loginToTrello() throws InterruptedException {
 			
 			webutil.waitForPageload();
@@ -90,6 +111,18 @@ public class LoginPage {
 		     
 		}
 		
+		public void logout() {
+			
+			webutil.click(getIcon_account());
+			
+			webutil.click(getBtn_logout());
+			
+			webutil.waitForPageload();
+			
+			webutil.click(getBtn_finalLogout());
+			
+			webutil.waitForPageload();
 		
+		}
 
 }

@@ -37,6 +37,8 @@ public class HomePage {
 	
 	By input_boardTitle = By.xpath("//div[text()='Board title']/following-sibling::input");
 
+	
+
 	public HomePage(WebDriver driver)
 	{
 		
@@ -139,4 +141,6 @@ public class HomePage {
 	    webutil.clickClearAndInput(getInput_boardTitle(),boardName);
 	
 	}
+	
+	
 }

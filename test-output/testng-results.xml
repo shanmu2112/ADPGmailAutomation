@@ -2,20 +2,20 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-21T06:29:37Z" name="Default suite" finished-at="2023-02-21T06:31:50Z" duration-ms="132873">
+  <suite started-at="2023-02-21T07:04:29Z" name="Default suite" finished-at="2023-02-21T07:07:05Z" duration-ms="155567">
     <groups>
     </groups>
-    <test started-at="2023-02-21T06:29:37Z" name="Default test" finished-at="2023-02-21T06:31:50Z" duration-ms="132873">
+    <test started-at="2023-02-21T07:04:29Z" name="Default test" finished-at="2023-02-21T07:07:05Z" duration-ms="155567">
       <class name="Trello.Assignment1">
-        <test-method is-config="true" signature="login()[pri:0, instance:Trello.Assignment1@6340e5f0]" started-at="2023-02-21T11:59:37Z" name="login" finished-at="2023-02-21T12:00:15Z" duration-ms="38133" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:Trello.Assignment1@6340e5f0]" started-at="2023-02-21T12:34:29Z" name="login" finished-at="2023-02-21T12:35:09Z" duration-ms="39694" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="dragCardAndfetchCardCoordinates()[pri:0, instance:Trello.Assignment1@6340e5f0]" started-at="2023-02-21T12:00:15Z" name="dragCardAndfetchCardCoordinates" finished-at="2023-02-21T12:01:49Z" duration-ms="93923" status="PASS">
+        <test-method signature="dragCardAndfetchCardCoordinates()[pri:0, instance:Trello.Assignment1@6340e5f0]" started-at="2023-02-21T12:35:09Z" name="dragCardAndfetchCardCoordinates" finished-at="2023-02-21T12:37:04Z" duration-ms="115053" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dragCardAndfetchCardCoordinates -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Trello.Assignment1@6340e5f0]" started-at="2023-02-21T12:01:49Z" name="closeBrowser" finished-at="2023-02-21T12:01:50Z" duration-ms="802" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Trello.Assignment1@6340e5f0]" started-at="2023-02-21T12:37:04Z" name="closeBrowser" finished-at="2023-02-21T12:37:05Z" duration-ms="807" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
