@@ -39,7 +39,7 @@ public class Assignment1 extends BasePage{
 	public void dragCardAndfetchCardCoordinates() throws InterruptedException
 	{
 	 
-	    basePage.homePage(driver).createWorkspace("Anywhere Works", "Help the world work anywhere");	
+	    basePage.homePage(driver).createWorkspace("Anywhere Works", "Help the world work anywhere ");	
 	    
 	    basePage.homePage(driver).createBoard("Full Creative");
 	    
