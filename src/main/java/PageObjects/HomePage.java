@@ -1,6 +1,7 @@
 package PageObjects;
 
 import java.io.FileInputStream;
+import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -15,29 +16,71 @@ public class HomePage {
 	
 	WebUtil webutil;
 	
-	By btn_Create = By.xpath("//p[text()='Create']/parent::button");
+	By btn_closePopup = By.xpath("//button[@aria-label='Close']");
 	
-	By btn_CreateWorkspace = By.xpath("//span[text()='Create Workspace']/parent::button");
+	By btn_createLabel = By.xpath("//div[@aria-label='Create new label']");
 	
-	By btn_CreateBoard = By.xpath("//span[text()='Create board']/parent::button");
+	By input_labelName = By.xpath("//label[text()='Please enter a new label name:']/parent::div/following-sibling::input");
 	
-	By field_workspaceName = By.xpath("//label[text()='Workspace name']/following-sibling::input");
+	By btn_create = By.xpath("//button[contains(text(),'Create')]");
 	
-	By choose_workspaceType = By.xpath("//div[contains(text(),'Choose')]");
+	String link_label = "//a[contains(@href,'label') and text()='key']";
 	
-	By otherWorkspace = By.xpath("//div[contains(@data-testid,'input-other')]");
-	
-	By description_workspace = By.xpath("//label[contains(@for,'description')]/following-sibling::textarea");
-	
-	By btn_workspaceContinue = By.xpath("//button[text()='Continue']");
-	
-	By doThisLater = By.xpath("//a[contains(text(),'do this later')]");
+	By allLink_label = By.xpath("//a[contains(@href,'label')]");
 
-	By btn_createFirstBoard = By.xpath("//button[text()='Create your first board']");
+	By icon_threeDotLabel = By.xpath("//div[@data-label-name='abc']");
 	
-	By input_boardTitle = By.xpath("//div[text()='Board title']/following-sibling::input");
+	By edit_label = By.xpath("//div[text()='Edit']");
+	
+	By save_label = By.xpath("//button[contains(text(),'Save')]");
+	
+	public By getBtn_closePopup() {
+		
+		return btn_closePopup;
+	}
+
+	public By getBtn_createLabel() {
+		
+		return btn_createLabel;
+	}
 
 	
+	public By getInput_labelName() {
+		
+		return input_labelName;
+	}
+
+	
+	public By getBtn_create() {
+		
+		return btn_create;
+	}
+	
+	public String getLink_label() {
+		
+		return link_label;
+	}	
+
+	public By getIcon_threeDotLabel() {
+		
+		return icon_threeDotLabel;
+	}
+
+	public By getEdit_label() {
+		
+		return edit_label;
+	}
+	
+	public By getSave_label() {
+		
+		return save_label;
+	}
+	
+	public By getAllLink_label() {
+		
+		return allLink_label;
+		
+	}
 
 	public HomePage(WebDriver driver)
 	{
@@ -48,99 +91,46 @@ public class HomePage {
 		
 	}
 	
-	public By getBtn_Create() {
-		
-		return btn_Create;
-	}
+	
+	//At certain cases, we can freeze web page after a specific timelimit! Type setTimeout(function(){debugger;},5000); and press Enter in Console ! This command will freeze webpage after 5 seconds, we can inspect elements after that.
 
-    public By getBtn_CreateWorkspace() {
-		
-		return btn_CreateWorkspace;
-	}
-
-    public By getField_workspaceName() {
+    public boolean createNewLabel(String label) throws InterruptedException {
     	
-		return field_workspaceName;
-	}
-
-	public By getChoose_workspaceType() {
+    	webutil.click(getBtn_createLabel());
+    	
+    	webutil.clickClearAndInput(getInput_labelName(),label);
+    	
+    	webutil.click(getBtn_create());
+    	
+    	if(webutil.isElementPresent(webutil.getElement(getLink_label(),label)))
+    	{
+    		return true;
+    	}
+    	
+    	return false;
+    	
+    }
+    
+    public boolean renameLabel(String oldLabelName, String newLabelName) throws InterruptedException {
+    	
+        boolean labelNameChanged = webutil.isElementPresent(webutil.getElement(getLink_label(), newLabelName));
+        if(labelNameChanged) {
+        	
+        	return true;
+        }
+    	return false;
+    }
+    
+    public void listAllLabels(){
+    	
+    	List<WebElement> allLabels = webutil.getElements(getAllLink_label());
+    	
+    	for(WebElement label: allLabels) {
+    		
+    		System.out.println(label.getText());
+    		
+    	}
+    	
+    }	
 		
-		return choose_workspaceType;
-	}
-
-	public By getOtherWorkspace() {
-		
-		return otherWorkspace;
-	}
-
-	public By getDescription_workspace() {
-		
-		return description_workspace;
-	}
-
-	public By getBtn_workspaceContinue() {
-		
-		return btn_workspaceContinue;
-	}
-
-	public By getDoThisLater() {
-		
-		return doThisLater;
-	}
-	
-	public By getBtn_createFirstBoard() {
-		
-		return btn_createFirstBoard;
-	}
-
-	public By getInput_boardTitle() {
-		
-		return input_boardTitle;
-	}
-
-	public By getBtn_CreateBoard() {
-		
-		return btn_CreateBoard;
-	}
-
-	public void createWorkspace(String workspaceName,String description) 
-	{
-		webutil.waitForPageload();
-		
-		webutil.click(getBtn_Create());
-		
-		webutil.click(getBtn_CreateWorkspace());
-		
-		webutil.waitForPageload();
-		
-		webutil.clickClearAndInput(getField_workspaceName(),workspaceName);
-		
-		webutil.click(getChoose_workspaceType());
-		
-		webutil.click(getOtherWorkspace());
-		
-		webutil.clickClearAndInput(getDescription_workspace(), description);
-		
-		webutil.click(getBtn_workspaceContinue());
-		
-		webutil.waitForPageload();
-		
-		webutil.click(getDoThisLater());
-		
-		webutil.waitForPageload();
-	}
-	
-	public void createBoard(String boardName)
-	{	
-        webutil.waitForPageload();
-		
-		webutil.click(getBtn_Create());
-		
-	    webutil.click(getBtn_CreateBoard());
-	    
-	    webutil.clickClearAndInput(getInput_boardTitle(),boardName);
-	
-	}
-	
-	
 }

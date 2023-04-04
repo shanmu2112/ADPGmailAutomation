@@ -1,25 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="1" passed="1" failed="0" skipped="0">
+<testng-results total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-21T07:04:29Z" name="Default suite" finished-at="2023-02-21T07:07:05Z" duration-ms="155567">
+  <suite started-at="2023-04-03T15:34:08Z" name="Default suite" finished-at="2023-04-03T15:34:11Z" duration-ms="2657">
     <groups>
     </groups>
-    <test started-at="2023-02-21T07:04:29Z" name="Default test" finished-at="2023-02-21T07:07:05Z" duration-ms="155567">
-      <class name="Trello.Assignment1">
-        <test-method is-config="true" signature="login()[pri:0, instance:Trello.Assignment1@6340e5f0]" started-at="2023-02-21T12:34:29Z" name="login" finished-at="2023-02-21T12:35:09Z" duration-ms="39694" status="PASS">
+    <test started-at="2023-04-03T15:34:08Z" name="Default test" finished-at="2023-04-03T15:34:11Z" duration-ms="2657">
+      <class name="GmailAutomation.Assignment1">
+        <test-method is-config="true" signature="login()[pri:0, instance:GmailAutomation.Assignment1@742ff096]" started-at="2023-04-03T21:04:08Z" name="login" finished-at="2023-04-03T21:04:08Z" duration-ms="0" status="FAIL">
+          <exception class="org.openqa.selenium.remote.http.ConnectionFailedException">
+            <message>
+              <![CDATA[Unable to establish websocket connection to http://localhost:61008/devtools/browser/88c49c66-3e8b-4461-8402-ee151c2f5c40
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'DESKTOP-TDVGPHF', ip: '192.168.0.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.1'
+Driver info: driver.version: ChromeDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:61008/devtools/browser/88c49c66-3e8b-4461-8402-ee151c2f5c40
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'DESKTOP-TDVGPHF', ip: '192.168.0.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.1'
+Driver info: driver.version: ChromeDriver
+	at org.openqa.selenium.remote.http.netty.NettyWebSocket.<init>(NettyWebSocket.java:104)
+	at org.openqa.selenium.remote.http.netty.NettyWebSocket.lambda$create$3(NettyWebSocket.java:137)
+	at org.openqa.selenium.remote.http.netty.NettyClient.openSocket(NettyClient.java:127)
+	at org.openqa.selenium.devtools.Connection.<init>(Connection.java:77)
+	at org.openqa.selenium.chromium.ChromiumDriver.lambda$new$2(ChromiumDriver.java:124)
+	at java.base/java.util.Optional.map(Optional.java:258)
+	at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:122)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:104)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:91)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:46)
+	at PageObjects.BasePage.initializeDriver(BasePage.java:41)
+	at GmailAutomation.Assignment1.login(Assignment1.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:653)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.remote.http.ConnectionFailedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="dragCardAndfetchCardCoordinates()[pri:0, instance:Trello.Assignment1@6340e5f0]" started-at="2023-02-21T12:35:09Z" name="dragCardAndfetchCardCoordinates" finished-at="2023-02-21T12:37:04Z" duration-ms="115053" status="PASS">
+        <test-method signature="assignment1()[pri:0, instance:GmailAutomation.Assignment1@742ff096]" started-at="2023-04-03T21:04:11Z" name="assignment1" finished-at="2023-04-03T21:04:11Z" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- dragCardAndfetchCardCoordinates -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:Trello.Assignment1@6340e5f0]" started-at="2023-02-21T12:37:04Z" name="closeBrowser" finished-at="2023-02-21T12:37:05Z" duration-ms="807" status="PASS">
+        </test-method> <!-- assignment1 -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:GmailAutomation.Assignment1@742ff096]" started-at="2023-04-03T21:04:11Z" name="closeBrowser" finished-at="2023-04-03T21:04:11Z" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- Trello.Assignment1 -->
+      </class> <!-- GmailAutomation.Assignment1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

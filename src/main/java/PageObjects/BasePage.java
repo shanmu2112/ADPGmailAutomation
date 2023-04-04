@@ -75,9 +75,5 @@ import org.openqa.selenium.firefox.FirefoxDriver;
    
     }
 
-     public BoardPage boardPage(WebDriver driver) 
-     {
-    	 return new BoardPage(driver);
-     }
      
 }

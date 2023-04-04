@@ -3,13 +3,12 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="Trello.Assignment1">
+      <class name="GmailAutomation.Assignment1">
         <methods>
-          <include name="dragCardAndfetchCardCoordinates"/>
           <include name="login"/>
-          <include name="closeBrowser"/>
+          <include name="assignment1"/>
         </methods>
-      </class> <!-- Trello.Assignment1 -->
+      </class> <!-- GmailAutomation.Assignment1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -18,21 +18,41 @@ public class LoginPage {
 	    
 	    public Properties prop;
 	    
-		By btn_loginHome = By.xpath("//a[contains(@href,'login')]");
+	    By btn_signIn = By.xpath("//a[text()='Sign in']");
+	    
+	    By input_email = By.xpath("//input[@type='email']");
 		
-		By input_user= By.xpath("//input[@name='user']");
-		
-		By continueLogin = By.xpath("//input[@id='login']");
-		
-		By input_password = By.xpath("//input[@id='password']");
-		
-		By btn_login = By.xpath("//button[contains(@id,'login')]");
-		
-		By icon_account = By.xpath("//button[@aria-label='Open member menu']");
-		
-		By btn_logout = By.xpath("//button[contains(@data-testid,'logout')]");
-		
-	    By btn_finalLogout = By.xpath("//span[text()='Log out']/parent::span/parent::button");
+	    By btn_Next = By.xpath("//span[text()='Next']");
+	    
+	    By input_password = By.xpath("//input[@type='password']");
+	    
+     	By btn_NotNow =   By.xpath("//span[text()='Not now']");
+     	
+     	By logo_gmail = By.xpath("//img[contains(@src,'logo_gmail')]");
+     	
+		public By getBtn_signIn() {
+			return btn_signIn;
+		}
+
+		public By getInput_email() {
+			return input_email;
+		}
+
+		public By getBtn_Next() {
+			return btn_Next;
+		}
+
+		public By getInput_password() {
+			return input_password;
+		}
+
+		public By getBtn_NotNow() {
+			return btn_NotNow;
+		}
+
+		public By getLogo_gmail() {
+			return logo_gmail;
+		}
 		
 		public LoginPage(WebDriver driver) throws IOException
 	{
@@ -51,78 +71,38 @@ public class LoginPage {
     	
 		prop.load(fis);
 	}
+		
+		public boolean loginToGmail(String email,String password) {
+			
+			webutil.waitForPageload();
+			
+			webutil.clickClearAndInput(getInput_email(), email);
+			
+			webutil.click(getBtn_Next());
+			
+			webutil.clickClearAndInput(getInput_password(), password);
+			
+			webutil.click(getBtn_Next());
+			
+			webutil.waitForPageload();
+			
+			if(webutil.isElementPresent(getBtn_NotNow())) {
+				
+				webutil.click(getBtn_NotNow());
+			}
+			
+			webutil.waitForPageload();
+			
+			if(webutil.isElementPresent(getLogo_gmail())) {
+				
+				return true;
+			}
+			
+			return false;
+			
+		}
+
+		
 	
-		public WebElement getBtn_loginHome() {
-			
-			return driver.findElement(btn_loginHome);
-		}
-		public WebElement getInput_user() {
-			
-			return driver.findElement(input_user);
-		}
-		public WebElement getContinueLogin() {
-			
-			return driver.findElement(continueLogin);
-		}
-		public WebElement getInput_password() {
-			
-			return driver.findElement(input_password);
-		}
-		public WebElement getBtn_login() {
-			
-			return driver.findElement(btn_login);
-		}
 		
-		public By getIcon_account() {
-			
-			return icon_account;
-		}
-		
-		public By getBtn_logout() {
-			
-			return btn_logout;
-		}
-		
-		public By getBtn_finalLogout() {
-			
-			return btn_finalLogout;
-		}
-		
-		public void loginToTrello() throws InterruptedException {
-			
-			webutil.waitForPageload();
-			
-			webutil.click(getBtn_loginHome());
-			
-			webutil.waitForPageload();
-			
-			webutil.clickClearAndInput(getInput_user(),prop.getProperty("userID"));
-			
-			webutil.click(getContinueLogin());
-			
-			webutil.waitForPageload();
-			
-			webutil.clickClearAndInput(getInput_password(), prop.getProperty("password"));
-			
-			webutil.click(getBtn_login());
-			
-			webutil.waitForPageload();
-
-		     
-		}
-		
-		public void logout() {
-			
-			webutil.click(getIcon_account());
-			
-			webutil.click(getBtn_logout());
-			
-			webutil.waitForPageload();
-			
-			webutil.click(getBtn_finalLogout());
-			
-			webutil.waitForPageload();
-		
-		}
-
 }
